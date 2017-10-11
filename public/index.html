@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>LLAP</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='css/style.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <h1>GreenSock</h1>
+            <img src="./logo.svg" alt="" id="logo">
+            <div class="buttons">
+                <button id="b1">UP</button>
+                <button id="b2">LEFT</button>
+                <button id="b3">RIGHT</button>
+                <button id="b4">DOWN</button>
+            </div>
+        </header>
+        <div class="content">
+           <div class="box" id="box1">Box 1</div>
+           <div class="box" id="box2">Box 2</div>
+           <div class="box" id="box3">Box 3</div>
+           <div class="box" id="box4">Box 4</div>
+        </div>
+        
+
+        <!-- CDN Goes Here -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        
+        <script>
+            // All Javascript here
+            window.onload = function() {
+                var logo = document.getElementById("logo");
+                var box1 = document.getElementById("box1");
+                var box2 = document.getElementById("box2");
+                var box3 = document.getElementById("box3");
+                var box4 = document.getElementById("box4");
+
+                var b1 = document.getElementById("b1");
+                var b2 = document.getElementById("b2");
+                var b3 = document.getElementById("b3");
+                var b4 = document.getElementById("b4");
+
+                // TweenLite.to(box1, 8, {left: "654px"})
+
+                // TweenLite.to(box1, 4, {delay: 3,left: "654px"})
+                // TweenLite.to(box1, 4, {delay: 3,left: "654px", backgroundColor: "#291"},{ease:Power2.easeInOut})
+                // TweenLite.to(box1, 3, {delay: 7,left: "50px", backgroundColor: "navy"},{ease:Power4.easeInOut})
+                // TweenLite.from(box1, 9, {delay: 2, opacity: 0})
+                // TweenLite.to(box1, 0.5, {left: '+=1000', delay: 3})
+
+                // TweenLite.to(box4, 0.5, {left: '+=1000', delay: 3})
+                // TweenLite.to(box4, 0.5, {top: '-=500', delay: 3.5})
+                // TweenLite.to(box4, 0.5, {left: '-=1000', delay: 4})
+                // TweenLite.to(box4, 0.5, {top: '+=500', delay: 4.5})
+
+                // TweenLite.to([box1, box4], 0.5, {left: '+=1000', delay: 3})
+                // TweenLite.to([box1, box4], 0.5, {top: '-=500', delay: 3.5})
+                // TweenLite.to([box1, box4], 0.5, {left: '-=1000', delay: 4})
+                // TweenLite.to([box1, box4], 0.5, {top: '+=500', delay: 5.5})
+
+                // var up = TweenLite.to(box1, 0.5, {top: '-=20px'})
+                // var left = TweenLite.to(box1, 0.5, {left: "-=20px"})
+                // var right = TweenLite.to(box1, 0.5, {left: "+=20px"})
+                // var down = TweenLite.to(box1, 0.5, {top: "+=20px"})
+
+                // logo.onclick = function() {
+                //     tween.restart();
+                // }
+                var myBox = box4;
+                box1.onclick = function() {
+                    myBox = box1;
+                }
+                box2.onclick = function() {
+                    myBox = box2;
+                }
+                box3.onclick = function() {
+                    myBox = box3;
+                }
+                box4.onclick = function() {
+                    myBox = box4;
+                }
+
+                b1.onclick = function() {
+                    console.log('up');
+                    // up.play()
+                    TweenLite.to(myBox, 0.5, {top: '-=40px'})
+                }
+                b2.onclick = function() {
+                    TweenLite.to(myBox, 0.5, {left: "-=40px"})
+                }
+                b3.onclick = function() {
+                    TweenLite.to(myBox, 0.5, {left: "+=40px"})
+                }
+                b4.onclick = function() {
+                    TweenLite.to(myBox, 0.5, {top: "+=40px"})
+                    
+                }
+
+                var tl = new TimelineLite({paused:true});
+                // tl.to(box1, 0.5, {top: '-=20px'})
+                // .to(box1, 0.5, {left: "-=20px"})
+                // .to(box1, 0.5, {left: "+=20px"})
+                // .to(box1, 0.5, {top: "+=20px"})
+
+
+
+            }
+        </script>
+
+        
+    </body>
+</html>
